@@ -1,0 +1,45 @@
+/* FONDO DE LA PÁGINA */
+body {
+    background-color: #F4F6F9;
+    font-family: Arial, sans-serif;
+}
+
+/* LA BARRA DE ARRIBA */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #FFFFFF;
+    padding: 12px 30px;
+    border-bottom: 1px solid #E0E0E0;
+}
+/* ESTILOS DEL LOGO */
+.logo-texto {
+    font-size: 20px;
+    font-weight: bold;
+    color: #1A1A1A;
+}
+
+.logo-numero {
+    color: #4A3AFF;
+}
+/* CONTENEDOR DEL MENÚ */
+.menu {
+    display: flex;
+    gap: 20px; /* Separación de 20px entre cada enlace */
+}
+
+/* ESTILO DE CADA ENLACE */
+.nav-link {
+    text-decoration: none; 
+    color: #555555;        
+    font-size: 14px;
+    font-weight: 500;
+    padding: 8px 16px;    
+    border-radius: 20px;   
+
+/* ENLACE ACTIVO  */
+.nav-link.active {
+    background-color: #4A3AFF; /* Fondo azul/morado */
+    color: #FFFFFF;            /* Texto blanco */
+}
