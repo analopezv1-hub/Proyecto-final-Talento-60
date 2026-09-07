@@ -8,6 +8,30 @@
 
 </head> 
 <body>
+    <!-- PANTALLA DE BIENVENIDA -->
+<section class="bienvenida" id="bienvenida">
+
+    <div class="bienvenida-contenido">
+
+        <h1>Talento<span>60</span></h1>
+
+        <p class="frase-bienvenida">
+            El talento no cabe en una hoja.
+        </p>
+
+        <p class="texto-bienvenida">
+            Conoce personas, descubre oportunidades y
+            muestra quién eres en 60 segundos.
+        </p>
+
+        <button class="btn-comenzar" id="btnComenzar">
+            Comenzar →
+        </button>
+
+    </div>
+
+</section>
+<div id="pagina" class="pagina-oculta"></div>
     <header class="navbar">
         
         <!-- LOGO -->
@@ -41,7 +65,17 @@
         </div>
 
     </header>
+<script> 
+    const btnComenzar = document.getElementById("btnComenzar");
+    const bienvenida = document.getElementById("bienvenida");
+    const pagina = document.getElementById("pagina");
 
+    btnComenzar.addEventListener("click", function () {
+        bienvenida.style.display = "none";
+        pagina.classList.remove("pagina-oculta");
+    });
+</script> 
+</div> 
 </body>
 </html>
   <!-- 1. HERO -->
@@ -52,5 +86,3 @@
         Muestra quién eres, qué sabes hacer y conecta
         con nuevas oportunidades en solo 60 segundos.
       </p>
-
-     
