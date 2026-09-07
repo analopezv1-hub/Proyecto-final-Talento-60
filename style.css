@@ -101,68 +101,70 @@ body {
     border-radius: 50%;
     object-fit: cover;
     cursor: pointer;
-}
-/* =========================
-   PANTALLA DE BIENVENIDA
-========================= */
-
+} /* PANTALLA DE BIENVENIDA */
 .bienvenida {
     min-height: 100vh;
+    background-image: 
+        linear-gradient(rgba(60, 20, 20, 0.45), rgba(20, 20, 60, 0.45)),
+        url("Imagenes/Imagen.bienvenida.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
-
-    background: linear-gradient(135deg, #f5f3ff, #ffffff);
-
-    padding: 30px;
+    color: white;
 }
 
+/* CONTENIDO DE LA BIENVENIDA */
 .bienvenida-contenido {
-    max-width: 650px;
+    max-width: 700px;
+    padding: 40px;
 }
 
+/* TÍTULO */
 .bienvenida h1 {
     font-size: 64px;
-    color: #1A1A1A;
-    margin-bottom: 25px;
-    font-weight: 800;
+    margin-bottom: 20px;
+    font-weight: bold;
 }
 
 .bienvenida h1 span {
-    color: #4A3AFF;
+    color: #6C5CE7;
 }
 
+/* FRASE */
 .frase-bienvenida {
-    font-size: 32px;
-    font-weight: 700;
-    color: #1A1A1A;
-    margin-bottom: 18px;
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 20px;
 }
 
+/* TEXTO */
 .texto-bienvenida {
-    font-size: 18px;
-    color: #666666;
-    line-height: 1.7;
+    font-size: 20px;
+    line-height: 1.6;
     margin-bottom: 35px;
 }
 
+/* BOTÓN COMENZAR */
 .btn-comenzar {
-    background: #ff3a4a;
+    background: #4A3AFF;
     color: white;
     border: none;
     padding: 15px 35px;
     border-radius: 30px;
-    font-size: 16px;
+    font-size: 18px;
     font-weight: bold;
     cursor: pointer;
     transition: 0.3s;
 }
 
 .btn-comenzar:hover {
-    background: #2e28d8;
+    background: #d82854;
     transform: translateY(-2px);
 }
 .pagina-oculta {
     display: none;
-} 
