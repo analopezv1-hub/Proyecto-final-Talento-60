@@ -3,7 +3,6 @@ body {
     background-color: #F4F6F9;
     font-family: Arial, sans-serif;
 }
-
 /* LA BARRA DE ARRIBA */
 .navbar {
     display: flex;
@@ -19,7 +18,6 @@ body {
     font-weight: bold;
     color: #1A1A1A;
 }
-
 .logo-numero {
     color: #4A3AFF;
 }
@@ -28,7 +26,6 @@ body {
     display: flex;
     gap: 20px; /* Separación de 20px entre cada enlace */
 }
-
 /* ESTILO DE CADA ENLACE */
 .nav-link {
     text-decoration: none; 
@@ -39,7 +36,6 @@ body {
     border-radius: 20px;
     cursor: pointer; 
 }
-
 /* ENLACE ACTIVO  */
 .nav-link.active {
     background-color: #4A3AFF; /* Fondo azul/morado */
@@ -89,12 +85,10 @@ body {
     align-items: center;
     gap: 15px;
 }
-
 .icono-campana {
     font-size: 18px;
     cursor: pointer;
 }
-
 .foto-perfil {
     width: 35px;
     height: 35px;
@@ -121,7 +115,6 @@ body {
     position: relative;
     min-height: 100vh;
 }
-
 .btn-iniciar-sesion {
     position: absolute !important;
     top: 25px !important;
@@ -148,32 +141,33 @@ body {
     max-width: 700px;
     padding: 40px;
 }
-
 /* TÍTULO */
+.bienvenida h1 {
+    font-size: 65px;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+/* TÍTULO DE BIENVENIDA */
 .bienvenida h1 {
     font-size: 64px;
     margin-bottom: 20px;
     font-weight: bold;
 }
-
 .bienvenida h1 span {
     color: #6C5CE7;
 }
-
 /* FRASE */
 .frase-bienvenida {
     font-size: 28px;
     font-weight: bold;
     margin-bottom: 20px;
 }
-
 /* TEXTO */
 .texto-bienvenida {
     font-size: 20px;
     line-height: 1.6;
     margin-bottom: 35px;
 }
-
 /* BOTÓN COMENZAR */
 .btn-comenzar {
     background: #4A3AFF;
@@ -193,4 +187,33 @@ body {
 }
 .pagina-oculta {
     display: none;
+}
+/* BENEFICIOS DE LA PANTALLA DE BIENVENIDA */
+.beneficios-bienvenida {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+    margin-top: 45px;
+    color: white;
+    font-size: 18px;
+    font-weight: 500;
+}
+/* CADA BENEFICIO */
+.beneficio {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    white-space: nowrap;
+}
+/* ÍCONOS AMARILLOS */
+.icono-beneficio {
+    color: #ffdd00;
+    font-size: 28px;
+}
+/* LÍNEAS SEPARADORAS */
+.separador-beneficio {
+    width: 1px;
+    height: 35px;
+    background: rgba(255, 255, 255, 0.6);
 }
