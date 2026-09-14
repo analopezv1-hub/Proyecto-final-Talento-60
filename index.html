@@ -4,8 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Talento 60</title>
-   <link rel="stylesheet" href="style.css">
-
+    <link rel="stylesheet" href="style.css">
 </head> 
 <body>
     <header class="navbar">
@@ -15,13 +14,14 @@
             <span class="logo-texto">Talento<span class="logo-numero">60</span></span>
         </div>
 
-        <!-- MENÚ CENTRAL -->
-        <nav class="menu">
-    <a href="#" class="nav-link active">Inicio & Explorar</a>
-    <a href="#" class="nav-link">Feed de Evaluación</a>
-    <a href="#" class="nav-link">Estudio de Grabación</a>
-    <a href="#" class="nav-link">Gestión de Vacantes</a>
-</nav>
+        <!-- MENÚ CENTRAL (Con enlaces internos) -->
+        <nav class="menu-navegacion">
+            <a href="#inicio" class="nav-link active">Inicio & Explorar</a>
+            <a href="#feed" class="nav-link">Feed de Evaluación</a>
+            <a href="#procesos" class="nav-link">Procesos</a>
+            <a href="#mensajes" class="nav-link">Mensajes</a>
+        </nav>
+
         <!-- ACCIONES DE LA DERECHA -->
         <div class="acciones">
             <!-- Selector Empresa / Candidato -->
@@ -41,6 +41,274 @@
         </div>
 
     </header>
+
+    <main> 
+        <main> 
+        <!-- SECCIÓN HERO (PRESENTACIÓN PRINCIPAL) -->
+        <section id="inicio" class="hero-section">
+            <div class="hero-contenido">
+                <span class="badge-herramienta">✨ Plataforma de Selección por Video</span>
+                <h1>Tu talento habla <span>más</span> que un currículum en papel.</h1>
+                <p class="hero-descripcion">
+                    Un video de solo 60 segundos revela la actitud, la comunicación y la pasión que jamás se leen en un archivo PDF. Descubre los mejores perfiles y asegura la persona indicada para tu equipo.
+                </p>
+                <div class="hero-botones">
+                    <button class="btn-subir-cv">Publicar tu Videocurrículum</button>
+                    <button class="btn-explorar-secundario">Explorar Candidatos</button>
+                </div>
+            </div>
+
+            <!-- VISTA PREVIA FLOTANTE (DERECHA) -->
+            <div class="hero-media">
+                <div class="tarjeta-hero-preview">
+                    <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=500" alt="Candidata en video" class="img-hero-preview">
+                    <span class="badge-tiempo">0:60</span>
+                    <button class="btn-play-hero">▶</button>
+                    <div class="card-flotante-info">
+                        <strong>Sofía Serna</strong>
+                        <span>Diseñadora UX/UI</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- MÉTRICAS / ESTADÍSTICAS -->
+        <div class="seccion-metricas">
+            <div class="metrica-item">
+                <strong>+12,400</strong>
+                <span>Candidatos con video activo</span>
+            </div>
+            <div class="metrica-item">
+                <strong>60s</strong>
+                <span>Duración máxima permitida</span>
+            </div>
+            <div class="metrica-item">
+                <strong>85%</strong>
+                <span>Reducción de tiempo de contratación</span>
+            </div>
+        </div>
+
+    </main>
+        <!-- SECCIÓN: VIDEOCURRÍCULUMS DESTACADOS -->
+        <div class="seccion-destacados">
+            <h2>Videocurrículums Destacados de la Semana</h2>
+            <p class="subtitulo-seccion">Para empresas que valoran la comunicación, creatividad y autenticidad por sobre una hoja de papel.</p>
+
+            <div class="contenedor-tarjetas">
+                <!-- Tarjeta 1 -->
+                <article class="tarjeta-video">
+                    <div class="contenedor-media">
+                        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=500" alt="Video Candidato" class="video-thumbnail">
+                        <span class="badge-tiempo">0:58</span>
+                        <span class="badge-match">Match 98%</span>
+                        <button class="btn-play-overlay">▶</button>
+                    </div>
+                    <div class="info-tarjeta">
+                        <h3>Mateo Rivera <span class="edad">25 yrs</span></h3>
+                        <p class="titulo-puesto">Diseñador UI/UX & Web Flow</p>
+                        <div class="pills-skills">
+                            <span>Figma</span>
+                            <span>Design System</span>
+                        </div>
+                        <button class="btn-ver-perfil">Ver Perfil</button>
+                    </div>
+                </article>
+
+                <!-- Tarjeta 2 -->
+                <article class="tarjeta-video">
+                    <div class="contenedor-media">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=500" alt="Video Candidato" class="video-thumbnail">
+                        <span class="badge-tiempo">0:45</span>
+                        <span class="badge-match">Match 95%</span>
+                        <button class="btn-play-overlay">▶</button>
+                    </div>
+                    <div class="info-tarjeta">
+                        <h3>Lucas Lucena <span class="edad">28 yrs</span></h3>
+                        <p class="titulo-puesto">Desarrollador Frontend Senior</p>
+                        <div class="pills-skills">
+                            <span>React</span>
+                            <span>TypeScript</span>
+                        </div>
+                        <button class="btn-ver-perfil">Ver Perfil</button>
+                    </div>
+                </article>
+
+                <!-- Tarjeta 3 -->
+                <article class="tarjeta-video">
+                    <div class="contenedor-media">
+                        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=500" alt="Video Candidato" class="video-thumbnail">
+                        <span class="badge-tiempo">0:59</span>
+                        <span class="badge-match">Match 92%</span>
+                        <button class="btn-play-overlay">▶</button>
+                    </div>
+                    <div class="info-tarjeta">
+                        <h3>Camila Morales <span class="edad">24 yrs</span></h3>
+                        <p class="titulo-puesto">Product Manager Junior</p>
+                        <div class="pills-skills">
+                            <span>Agile</span>
+                            <span>Scrum</span>
+                        </div>
+                        <button class="btn-ver-perfil">Ver Perfil</button>
+                    </div>
+                </article>
+
+                <!-- Tarjeta 4 -->
+                <article class="tarjeta-video">
+                    <div class="contenedor-media">
+                        <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=500" alt="Video Candidato" class="video-thumbnail">
+                        <span class="badge-tiempo">0:50</span>
+                        <span class="badge-match">Match 90%</span>
+                        <button class="btn-play-overlay">▶</button>
+                    </div>
+                    <div class="info-tarjeta">
+                        <h3>Diego Alarcón <span class="edad">30 yrs</span></h3>
+                        <p class="titulo-puesto">Especialista en Marketing Digital</p>
+                        <div class="pills-skills">
+                            <span>Growth</span>
+                            <span>SEO</span>
+                        </div>
+                        <button class="btn-ver-perfil">Ver Perfil</button>
+                    </div>
+                    <!-- SECCIÓN: CÓMO FUNCIONA -->
+        <section id="procesos" class="seccion-como-funciona">
+            <div class="encabezado-centro">
+                <span class="badge-subtitulo">Paso a paso para candidatos</span>
+                <h2>¿Cómo funciona en 60 segundos?</h2>
+                <p>Proceso ágil y directo sin cartas de presentación eternas. Demuestra tu potencial cara a cara.</p>
+            </div>
+
+            <div class="contenedor-pasos">
+                <!-- Paso 1 -->
+                <div class="tarjeta-paso">
+                    <div class="numero-paso paso-1">1</div>
+                    <h3>Graba tu Pitch en Video</h3>
+                    <p>Graba un video corto respondiendo preguntas clave sobre tus logros, experiencia y lo que buscas en tu próximo rol.</p>
+                    <ul class="lista-check">
+                        <li>✓ ¿Quién eres y qué aportas?</li>
+                        <li>✓ ¿Tus proyectos más relevantes?</li>
+                        <li>✓ ¿Qué buscas en tu nuevo puesto?</li>
+                    </ul>
+                </div>
+
+                <!-- Paso 2 -->
+                <div class="tarjeta-paso">
+                    <div class="numero-paso paso-2">2</div>
+                    <h3>Adjunta tu CV Técnico</h3>
+                    <p>Sube tu currículum en PDF para complementar tu presentación con datos duros, educación y trayectoria.</p>
+                    <div class="preview-pdf">
+                        <span class="icono-pdf">📄</span>
+                        <div>
+                            <strong>Mi_CV_Oficial.pdf</strong>
+                            <span>Documento validado</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Paso 3 -->
+                <div class="tarjeta-paso">
+                    <div class="numero-paso paso-3">3</div>
+                    <h3>Conecta en Tiempo Récord</h3>
+                    <p>Las empresas ven tu perfil, evalúan tu comunicación y solicitan entrevistas en cuestión de horas.</p>
+                    <div class="badge-alerta">
+                        ⚡ Notificación: Empresa solicitó entrevista
+                    </div>
+                </div>
+            </div>
+        </section>
+                </article>
+            </div>
+        </div>
+        <!-- SECCIÓN PARA EMPRESAS -->
+        <section id="feed" class="seccion-empresas-oscura">
+            <div class="contenido-empresas">
+                <div class="columna-texto-empresa">
+                    <span class="badge-empresas">⚡ PARA EQUIPOS DE RECLUTAMIENTO</span>
+                    <h2>Deja de leer 300 PDFs aburridos. Conoce la personalidad, comunicación y pasión de tus candidatos en 1 minuto.</h2>
+                    <p>Ver la fluidez verbal y la presencia de un candidato en un video corto filtra más que tres rondas de entrevistas tradicionales. Optimiza tu proceso de selección sin perder calidad.</p>
+                    
+                    <div class="metricas-empresa">
+                        <div class="metrica-box">
+                            <strong>4x</strong>
+                            <span>Más rápido en evaluar</span>
+                        </div>
+                        <div class="metrica-box">
+                            <strong>0%</strong>
+                            <span>Sesgos por formato de CV</span>
+                        </div>
+                    </div>
+
+                    <div class="botones-empresa">
+                        <button class="btn-publicar-vacante">Publicar Vacante Gratis</button>
+                        <button class="btn-demo">Solicitar Demo</button>
+                    </div>
+                </div>
+
+                <!-- Testimonio / Tarjeta destacada -->
+                <div class="columna-testimonio">
+                    <div class="tarjeta-testimonio">
+                        <div class="comillas">“</div>
+                        <p class="texto-testimonio">
+                            Sin duda el cambio a videocurrículums nos redujo el tiempo de contratación a la mitad. La calidad de los candidatos que llegan a la entrevista presencial es increíble.
+                        </p>
+                        <div class="autor-testimonio">
+                            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=100" alt="Recruiter Avatar" class="foto-autor">
+                            <div>
+                                <strong>Carolina Osorio</strong>
+                                <span>Head of Talent @ TechLab</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- SECCIÓN: BUSCADOR DE VACANTES Y CATEGORÍAS -->
+        <section id="mensajes" class="seccion-vacantes">
+            <div class="encabezado-centro">
+                <h2>Encuentra vacantes que evalúan por video</h2>
+                <p>Aplica directamente mostrando tu talento sin pasar por filtros automatizados de texto.</p>
+            </div>
+
+            <!-- Buscador secundario con botón azul -->
+            <div class="barramenu-vacantes">
+                <input type="text" placeholder="Puesto, empresa o palabra clave...">
+                <input type="text" placeholder="📍 Ciudad o remoto">
+                <button class="btn-buscar-vacante">Buscar Vacantes</button>
+            </div>
+
+            <!-- Categorías populares -->
+            <div class="grid-categorias">
+                <div class="item-categoria">
+                    <span class="icono-cat">💻</span>
+                    <strong>Tecnología</strong>
+                    <small>140+ vacantes</small>
+                </div>
+                <div class="item-categoria">
+                    <span class="icono-cat">🎨</span>
+                    <strong>Diseño & UX</strong>
+                    <small>85+ vacantes</small>
+                </div>
+                <div class="item-categoria">
+                    <span class="icono-cat">📈</span>
+                    <strong>Ventas & Mkt</strong>
+                    <small>210+ vacantes</small>
+                </div>
+                <div class="item-categoria">
+                    <span class="icono-cat">🎧</span>
+                    <strong>Atención al Cliente</strong>
+                    <small>95+ vacantes</small>
+                </div>
+            </div>
+        </section>
+
+        <!-- BANNER FINAL CTA -->
+        <section class="banner-cta-final">
+            <div class="contenido-cta">
+                <h2>Tu carrera profesional comienza con 60 segundos.</h2>
+                <p>Crea tu cuenta gratis, graba tu video y conecta con empresas hoy mismo.</p>
+            </div>
+            <button class="btn-crear-cuenta">Crear mi Videocurrículum</button>
+        </section>
+    </main>
 
 </body>
 </html>
