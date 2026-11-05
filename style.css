@@ -30,24 +30,20 @@ html {
 
 body {
     margin: 0;
-    background: var(--fondo);
-    color: var(--tinta);
-    font-family: var(--fuente-principal);
-    line-height: 1.5;
+    padding: 0;
 }
 
-img {
-    display: block;
-    max-width: 100%;
-}
-
-button {
-    cursor: pointer;
-}
-
-/* Todo el sitio usa la misma serif editorial, tipo Times New Roman. */
-#pagina {
-    font-family: var(--fuente-principal);
+/* LA BARRA DE ARRIBA */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #FFFFFF;
+    padding: 12px 30px;
+    border-bottom: 1px solid #E0E0E0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
 }
 
 #pagina button,
@@ -77,91 +73,35 @@ button {
     text-align: center;
 }
 
-/* ---------- TIPOGRAFÍA DE LA LANDING ---------- */
-#pagina h1,
-#pagina h2,
-#pagina h3,
-#pagina .logo {
-    margin: 0;
-    color: var(--tinta);
-    font-family: var(--fuente-principal);
-}
-
-#pagina h1 {
-    font-size: clamp(34px, 5vw, 56px);
-    line-height: 1.08;
-    letter-spacing: -0.5px;
-}
-
-#pagina h1 span {
-    color: var(--morado);
-}
-
-#pagina h2 {
-    font-size: clamp(26px, 3.5vw, 38px);
-    line-height: 1.15;
-    letter-spacing: -0.3px;
-}
-
-#pagina h3 {
-    font-size: 18px;
-}
-
-#pagina p {
-    margin: 0;
-    color: var(--gris);
-    line-height: 1.7;
-}
-
-/* ---------- COMPONENTES ---------- */
-.btn {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-    padding: 12px 20px;
-    border: 0;
-    border-radius: 999px;
+/* ESTILO DE CADA ENLACE */
+.nav-link {
+    text-decoration: none; 
+    color: #555555;        
     font-size: 14px;
-    font-weight: 700;
-    text-decoration: none;
-    transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+    font-weight: 500;
+    padding: 8px 16px;    
+    border-radius: 20px;
+    cursor: pointer; 
 }
 
-.btn:hover {
-    transform: translateY(-1px);
+/* ENLACE ACTIVO  */
+.nav-link.active {
+    background-color: #4A3AFF; /* Fondo azul/morado */
+    color: #f0f2f5;            /* Texto blanco */
 }
-
-.btn-coral {
-    background: linear-gradient(135deg, #FF7A6E, #FF4D6D);
-    color: #FFFFFF;
-    box-shadow: 0 8px 20px rgba(255, 90, 95, 0.28);
+/*ALINEAR LO DE LA DERECHA*/
+.acciones {
+    display: flex;
+    align-items: center;
+    gap: 20px;
 }
-
-.btn-morado {
-    background: var(--morado);
-    color: #FFFFFF;
-}
-
-.btn-morado:hover {
-    background: var(--morado-oscuro);
-}
-
-.btn-blanco {
-    background: var(--blanco);
-    color: var(--tinta);
-    border: 1px solid var(--borde);
-}
-
-.btn-blanco:hover {
-    border-color: var(--morado);
-    color: var(--morado);
-}
-
-.btn-ghost {
-    background: transparent;
-    color: #FFFFFF;
-    border: 1px solid rgba(255, 255, 255, 0.3);
+/*SELECTOR EMPRESA O CANDIDADTO*/
+.selector-rol {
+    background-color: F0F2F5;
+    padding: 4px;
+    border-radius: 20px;
+    display: flex;
+    gap: 4px;
 }
 
 .btn-ghost:hover {
@@ -1464,11 +1404,13 @@ body.modal-abierto {
         font-size: 15px;
     }
 
-    .separador-beneficio {
-        display: none;
-    }
-
-    .login-card {
-        padding: 24px;
-    }
+.btn-crear-cuenta {
+    background-color: #ffffff;
+    color: #1A1A1A;
+    border: none;
+    padding: 14px 28px;
+    border-radius: 25px;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 14px;
 } 
