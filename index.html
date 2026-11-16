@@ -5,48 +5,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Talento 60: plataforma de selección por videocurrículum. Muestra tu talento en 60 segundos.">
     <title>Talento 60</title>
-    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tinos:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
     <link rel="icon" href="Imagenes/favicon.svg" type="image/svg+xml">
 </head>
 <body>
 
-    <!-- PANTALLA DE BIENVENIDA -->
+    <!-- ============================================================
+         BIENVENIDA (no se modifica)
+         ============================================================ -->
     <section class="bienvenida" id="bienvenida">
         <button class="btn-iniciar-sesion" id="btnIniciarSesion" type="button">Iniciar sesión</button>
 
         <div class="bienvenida-contenido">
             <h1>Talento<span>60</span></h1>
-
-            <p class="frase-bienvenida">
-                El talento no cabe en una hoja.
-            </p>
-
+            <p class="frase-bienvenida">El talento no cabe en una hoja.</p>
             <p class="texto-bienvenida">
-                Conoce personas, descubre oportunidades y
-                muestra quién eres en 60 segundos.
+                Conoce personas, descubre oportunidades y muestra quién eres en 60 segundos.
             </p>
 
-            <button class="btn-comenzar" id="btnComenzar" type="button">
-                Comenzar →
-            </button>
+            <button class="btn-comenzar" id="btnComenzar" type="button">Comenzar →</button>
 
-            <!-- BENEFICIOS DE TALENTO60 -->
             <div class="beneficios-bienvenida">
                 <div class="beneficio">
                     <i class="fa-solid fa-user-group icono-beneficio" aria-hidden="true"></i>
                     <span>Conecta</span>
                 </div>
-
                 <div class="separador-beneficio" aria-hidden="true"></div>
-
                 <div class="beneficio">
                     <i class="fa-regular fa-star icono-beneficio" aria-hidden="true"></i>
                     <span>Muestra tu talento</span>
                 </div>
-
                 <div class="separador-beneficio" aria-hidden="true"></div>
-
                 <div class="beneficio">
                     <i class="fa-solid fa-rocket icono-beneficio" aria-hidden="true"></i>
                     <span>Encuentra oportunidades</span>
@@ -55,319 +49,371 @@
         </div>
     </section>
 
-    <!-- PÁGINA PRINCIPAL (oculta hasta pulsar Comenzar) -->
-    <div id="pagina" class="pagina-oculta">
+    <!-- ============================================================
+         LANDING
+         ============================================================ -->
+    <div id="pagina" hidden>
 
+        <!-- NAVBAR -->
         <header class="navbar">
-            <!-- LOGO -->
-            <div class="logo">
-                <span class="logo-texto">Talento<span class="logo-numero">60</span></span>
-            </div>
+            <div class="navbar-inner">
+                <div class="navbar-fila">
+                    <button class="logo" id="logoInicio" type="button" aria-label="Volver a la bienvenida">
+                        Talento<span>60</span>
+                    </button>
 
-            <!-- MENÚ CENTRAL -->
-            <nav class="menu">
-                <a href="#inicio" class="nav-link active">Inicio & Explorar</a>
-                <a href="#feed" class="nav-link">Feed de Evaluación</a>
-                <a href="#procesos" class="nav-link">Estudio de Grabación</a>
-                <a href="#mensajes" class="nav-link">Gestión de Vacantes</a>
-            </nav>
-
-            <!-- ACCIONES DE LA DERECHA -->
-            <div class="acciones">
-                <!-- Selector Empresa / Candidato -->
-                <div class="selector-rol">
-                    <span class="opcion-rol active">Empresa</span>
-                    <span class="opcion-rol">Candidato</span>
+                    <div class="navbar-acciones">
+                        <button class="btn btn-coral btn-sm" type="button" data-vista="procesos">
+                            <i class="fa-solid fa-video" aria-hidden="true"></i> Subir Video
+                        </button>
+                        <button class="icono" type="button" aria-label="Notificaciones">
+                            <i class="fa-regular fa-bell" aria-hidden="true"></i>
+                        </button>
+                        <button class="avatar" id="btnLogin" type="button" aria-label="Iniciar sesión">
+                            <img src="Imagenes/avatar.svg" alt="">
+                        </button>
+                    </div>
                 </div>
 
-                <!-- Botón Subir Video -->
-                <button class="btn-subir" type="button">Subir Video</button>
-
-                <!-- Notificación y Perfil -->
-                <div class="perfil-usuario">
-                    <span class="icono-campana" role="img" aria-label="Notificaciones">🔔</span>
-                    <img src="Imagenes/avatar.svg" alt="Foto de perfil" class="foto-perfil">
-                </div>
+                <nav class="menu" aria-label="Navegación principal">
+                    <a href="#inicio" data-vista="inicio" class="activo">Inicio &amp; Explorar</a>
+                    <a href="#feed" data-vista="feed">Feed de Evaluación</a>
+                    <a href="#procesos" data-vista="procesos">Estudio de Grabación</a>
+                    <a href="#mensajes" data-vista="mensajes">Gestión de Vacantes</a>
+                </nav>
             </div>
         </header>
 
-        <main>
-            <!-- SECCIÓN HERO (PRESENTACIÓN PRINCIPAL) -->
-            <section id="inicio" class="hero-section">
-                <div class="hero-contenido">
-                    <span class="badge-herramienta">✨ Plataforma de Selección por Video</span>
+        <main class="contenedor">
+
+            <div class="vista" data-vista-content="inicio">
+<!-- HERO -->
+            <section id="inicio" class="hero">
+                <div class="hero-texto">
+                    <span class="badge badge-lila">✨ Plataforma de Selección por Video</span>
                     <h1>Tu talento habla <span>más</span> que un currículum en papel.</h1>
-                    <p class="hero-descripcion">
-                        Un video de solo 60 segundos revela la actitud, la comunicación y la pasión que jamás se leen en un archivo PDF. Descubre los mejores perfiles y asegura la persona indicada para tu equipo.
-                    </p>
+                    <p>Un video de solo 60 segundos revela la actitud, la comunicación y la pasión que jamás se leen en un PDF. Encuentra el talento que tu equipo necesita.</p>
+
                     <div class="hero-botones">
-                        <button class="btn-subir-cv" type="button">Publicar tu Videocurrículum</button>
-                        <button class="btn-explorar-secundario" type="button">Explorar Candidatos</button>
+                        <button class="btn btn-coral" type="button" data-vista="procesos">
+                            <i class="fa-solid fa-video" aria-hidden="true"></i> Publicar tu Videocurrículum
+                        </button>
+                        <button class="btn btn-blanco" type="button" data-vista="feed">
+                            Explorar Candidatos <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                        </button>
+                    </div>
+
+                    <div class="confianza">
+                        <div class="avatares">
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100" alt="">
+                            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=100" alt="">
+                            <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100" alt="">
+                        </div>
+                        <p><strong>6+ empresas</strong> confían en Talento 60</p>
                     </div>
                 </div>
 
-                <!-- VISTA PREVIA FLOTANTE (DERECHA) -->
-                <div class="hero-media">
-                    <div class="tarjeta-hero-preview">
-                        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=500" alt="Candidata en video" class="img-hero-preview">
-                        <span class="badge-tiempo">0:60</span>
-                        <button class="btn-play-hero" type="button" aria-label="Reproducir video">▶</button>
-                        <div class="card-flotante-info">
-                            <strong>Sofía Serna</strong>
-                            <span>Diseñadora UX/UI</span>
+                <div class="hero-video">
+                    <div class="video-card">
+                        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=500" alt="Vista previa del videocurrículum de Sofía Serna">
+                        <span class="badge badge-tiempo">0:60</span>
+                        <button class="btn-play" type="button" aria-label="Reproducir video de Sofía Serna">
+                            <i class="fa-solid fa-play" aria-hidden="true"></i>
+                        </button>
+                        <div class="video-info">
+                            <strong>
+                                Sofía Serna
+                                <span class="verificado"><i class="fa-solid fa-circle-check" aria-hidden="true"></i> Verificada</span>
+                            </strong>
+                            <span class="rol">Diseñadora UX/UI</span>
+                            <span class="badge badge-match">Match 98%</span>
                         </div>
                     </div>
-                </div>
-            </section>
-
-            <!-- MÉTRICAS / ESTADÍSTICAS -->
-            <div class="seccion-metricas">
-                <div class="metrica-item">
-                    <strong>+12,400</strong>
-                    <span>Candidatos con video activo</span>
-                </div>
-                <div class="metrica-item">
-                    <strong>60s</strong>
-                    <span>Duración máxima permitida</span>
-                </div>
-                <div class="metrica-item">
-                    <strong>85%</strong>
-                    <span>Reducción de tiempo de contratación</span>
-                </div>
-            </div>
-
-            <!-- SECCIÓN: VIDEOCURRÍCULUMS DESTACADOS -->
-            <div id="feed" class="seccion-destacados">
-                <h2>Videocurrículums Destacados de la Semana</h2>
-                <p class="subtitulo-seccion">Para empresas que valoran la comunicación, creatividad y autenticidad por sobre una hoja de papel.</p>
-
-                <div class="contenedor-tarjetas">
-                    <!-- Tarjeta 1 -->
-                    <article class="tarjeta-video">
-                        <div class="contenedor-media">
-                            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=500" alt="Video de Mateo Rivera" class="video-thumbnail">
-                            <span class="badge-tiempo">0:58</span>
-                            <span class="badge-match">Match 98%</span>
-                            <button class="btn-play-overlay" type="button" aria-label="Reproducir video de Mateo Rivera">▶</button>
-                        </div>
-                        <div class="info-tarjeta">
-                            <h3>Mateo Rivera <span class="edad">25 años</span></h3>
-                            <p class="titulo-puesto">Diseñador UI/UX & Web Flow</p>
-                            <div class="pills-skills">
-                                <span>Figma</span>
-                                <span>Design System</span>
-                            </div>
-                            <button class="btn-ver-perfil" type="button">Ver Perfil</button>
-                        </div>
-                    </article>
-
-                    <!-- Tarjeta 2 -->
-                    <article class="tarjeta-video">
-                        <div class="contenedor-media">
-                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=500" alt="Video de Lucas Lucena" class="video-thumbnail">
-                            <span class="badge-tiempo">0:45</span>
-                            <span class="badge-match">Match 95%</span>
-                            <button class="btn-play-overlay" type="button" aria-label="Reproducir video de Lucas Lucena">▶</button>
-                        </div>
-                        <div class="info-tarjeta">
-                            <h3>Lucas Lucena <span class="edad">28 años</span></h3>
-                            <p class="titulo-puesto">Desarrollador Frontend Senior</p>
-                            <div class="pills-skills">
-                                <span>React</span>
-                                <span>TypeScript</span>
-                            </div>
-                            <button class="btn-ver-perfil" type="button">Ver Perfil</button>
-                        </div>
-                    </article>
-
-                    <!-- Tarjeta 3 -->
-                    <article class="tarjeta-video">
-                        <div class="contenedor-media">
-                            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=500" alt="Video de Camila Morales" class="video-thumbnail">
-                            <span class="badge-tiempo">0:59</span>
-                            <span class="badge-match">Match 92%</span>
-                            <button class="btn-play-overlay" type="button" aria-label="Reproducir video de Camila Morales">▶</button>
-                        </div>
-                        <div class="info-tarjeta">
-                            <h3>Camila Morales <span class="edad">24 años</span></h3>
-                            <p class="titulo-puesto">Product Manager Junior</p>
-                            <div class="pills-skills">
-                                <span>Agile</span>
-                                <span>Scrum</span>
-                            </div>
-                            <button class="btn-ver-perfil" type="button">Ver Perfil</button>
-                        </div>
-                    </article>
-
-                    <!-- Tarjeta 4 -->
-                    <article class="tarjeta-video">
-                        <div class="contenedor-media">
-                            <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=500" alt="Video de Diego Alarcón" class="video-thumbnail">
-                            <span class="badge-tiempo">0:50</span>
-                            <span class="badge-match">Match 90%</span>
-                            <button class="btn-play-overlay" type="button" aria-label="Reproducir video de Diego Alarcón">▶</button>
-                        </div>
-                        <div class="info-tarjeta">
-                            <h3>Diego Alarcón <span class="edad">30 años</span></h3>
-                            <p class="titulo-puesto">Especialista en Marketing Digital</p>
-                            <div class="pills-skills">
-                                <span>Growth</span>
-                                <span>SEO</span>
-                            </div>
-                            <button class="btn-ver-perfil" type="button">Ver Perfil</button>
-                        </div>
-                    </article>
-                </div>
-            </div>
-
-            <!-- SECCIÓN: CÓMO FUNCIONA -->
-            <section id="procesos" class="seccion-como-funciona">
-                <div class="encabezado-centro">
-                    <span class="badge-subtitulo">Paso a paso para candidatos</span>
-                    <h2>¿Cómo funciona en 60 segundos?</h2>
-                    <p>Proceso ágil y directo sin cartas de presentación eternas. Demuestra tu potencial cara a cara.</p>
-                </div>
-
-                <div class="contenedor-pasos">
-                    <!-- Paso 1 -->
-                    <div class="tarjeta-paso">
-                        <div class="numero-paso paso-1">1</div>
-                        <h3>Graba tu Pitch en Video</h3>
-                        <p>Graba un video corto respondiendo preguntas clave sobre tus logros, experiencia y lo que buscas en tu próximo rol.</p>
-                        <ul class="lista-check">
-                            <li>✓ ¿Quién eres y qué aportas?</li>
-                            <li>✓ ¿Tus proyectos más relevantes?</li>
-                            <li>✓ ¿Qué buscas en tu nuevo puesto?</li>
-                        </ul>
-                    </div>
-
-                    <!-- Paso 2 -->
-                    <div class="tarjeta-paso">
-                        <div class="numero-paso paso-2">2</div>
-                        <h3>Adjunta tu CV Técnico</h3>
-                        <p>Sube tu currículum en PDF para complementar tu presentación con datos duros, educación y trayectoria.</p>
-                        <div class="preview-pdf">
-                            <span class="icono-pdf">📄</span>
-                            <div>
-                                <strong>Mi_CV_Oficial.pdf</strong>
-                                <span>Documento validado</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Paso 3 -->
-                    <div class="tarjeta-paso">
-                        <div class="numero-paso paso-3">3</div>
-                        <h3>Conecta en Tiempo Récord</h3>
-                        <p>Las empresas ven tu perfil, evalúan tu comunicación y solicitan entrevistas en cuestión de horas.</p>
-                        <div class="badge-alerta">
-                            ⚡ Notificación: Empresa solicitó entrevista
-                        </div>
+                    <div class="chip-ia">
+                        <i class="fa-solid fa-wand-magic-sparkles" aria-hidden="true"></i>
+                        IA Selección <small>demo</small>
                     </div>
                 </div>
             </section>
 
-            <!-- SECCIÓN PARA EMPRESAS -->
-            <section id="empresas" class="seccion-empresas-oscura">
-                <div class="contenido-empresas">
-                    <div class="columna-texto-empresa">
-                        <span class="badge-empresas">⚡ PARA EQUIPOS DE RECLUTAMIENTO</span>
-                        <h2>Deja de leer 300 PDFs aburridos. Conoce la personalidad, comunicación y pasión de tus candidatos en 1 minuto.</h2>
-                        <p>Ver la fluidez verbal y la presencia de un candidato en un video corto filtra más que tres rondas de entrevistas tradicionales. Optimiza tu proceso de selección sin perder calidad.</p>
+            <!-- MÉTRICAS -->
+            <section class="metricas" aria-label="Métricas de Talento 60">
+                <article class="card metrica">
+                    <span class="metrica-icono morado"><i class="fa-solid fa-users" aria-hidden="true"></i></span>
+                    <div><strong>+12,400</strong><span>Candidatos con video activo</span></div>
+                </article>
+                <article class="card metrica">
+                    <span class="metrica-icono coral"><i class="fa-regular fa-clock" aria-hidden="true"></i></span>
+                    <div><strong>60s</strong><span>Duración máxima permitida</span></div>
+                </article>
+                <article class="card metrica">
+                    <span class="metrica-icono verde"><i class="fa-solid fa-chart-line" aria-hidden="true"></i></span>
+                    <div><strong>85%</strong><span>Reducción de tiempo de contratación</span></div>
+                </article>
+            </section>
+<!-- EMPRESAS -->
+            <section class="empresas">
+                <div class="empresas-contenido">
+                    <div>
+                        <span class="badge badge-coral">Para equipos de reclutamiento</span>
+                        <h2>Deja de leer 300 PDFs. Conoce a tus candidatos en 1 minuto.</h2>
+                        <p>La comunicación y la presencia se ven mejor en video. Filtra más rápido sin perder calidad.</p>
 
                         <div class="metricas-empresa">
-                            <div class="metrica-box">
-                                <strong>4x</strong>
-                                <span>Más rápido en evaluar</span>
-                            </div>
-                            <div class="metrica-box">
-                                <strong>0%</strong>
-                                <span>Sesgos por formato de CV</span>
-                            </div>
+                            <div><strong>4x</strong><span>Más rápido al evaluar</span></div>
+                            <div><strong>0%</strong><span>Sesgos por formato</span></div>
                         </div>
 
-                        <div class="botones-empresa">
-                            <button class="btn-publicar-vacante" type="button">Publicar Vacante Gratis</button>
-                            <button class="btn-demo" type="button">Solicitar Demo</button>
+                        <div class="empresas-botones">
+                            <button class="btn btn-morado" type="button">Publicar vacante gratis</button>
+                            <button class="btn btn-ghost" type="button">Solicitar demo</button>
                         </div>
                     </div>
 
-                    <!-- Testimonio / Tarjeta destacada -->
-                    <div class="columna-testimonio">
-                        <div class="tarjeta-testimonio">
-                            <div class="comillas">“</div>
-                            <p class="texto-testimonio">
-                                Sin duda el cambio a videocurrículums nos redujo el tiempo de contratación a la mitad. La calidad de los candidatos que llegan a la entrevista presencial es increíble.
-                            </p>
-                            <div class="autor-testimonio">
-                                <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=100" alt="Carolina Osorio" class="foto-autor">
-                                <div>
-                                    <strong>Carolina Osorio</strong>
-                                    <span>Head of Talent @ TechLab</span>
-                                </div>
-                            </div>
+                    <div class="testimonio">
+                        <span class="comillas">“</span>
+                        <p>Sin duda el cambio a videocurrículums nos redujo el tiempo de contratación a la mitad. La calidad de los candidatos es increíble.</p>
+                        <div class="autor">
+                            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=100" alt="Carolina Osorio" loading="lazy">
+                            <div><strong>Carolina Osorio</strong><span>Head of Talent @ TechLab</span></div>
                         </div>
+                    </div>
+                </div>
+
+                <div class="logos" aria-label="Empresas de ejemplo">
+                    <span><i class="fa-solid fa-cube" aria-hidden="true"></i> TechLab</span>
+                    <span><i class="fa-solid fa-bolt" aria-hidden="true"></i> Nova</span>
+                    <span><i class="fa-solid fa-layer-group" aria-hidden="true"></i> Andina</span>
+                    <span><i class="fa-solid fa-code" aria-hidden="true"></i> Pixel</span>
+                    <span><i class="fa-solid fa-rocket" aria-hidden="true"></i> Futuro</span>
+                </div>
+            </section>
+            </div>
+
+            <div class="vista" data-vista-content="feed" hidden>
+<!-- CANDIDATOS -->
+            <section id="feed" class="seccion">
+                <div class="seccion-cabecera">
+                    <div>
+                        <span class="badge badge-lila">Candidatos</span>
+                        <h2>Videocurrículums destacados</h2>
+                        <p>Perfiles reales que se muestran como son, no como un PDF.</p>
+                    </div>
+
+                    <div class="filtros" aria-label="Filtrar candidatos">
+                        <button class="activo" type="button">Todos</button>
+                        <button type="button">Diseño UX</button>
+                        <button type="button">Desarrollo</button>
+                        <button type="button">Marketing</button>
+                        <button type="button">Producto</button>
+                    </div>
+                </div>
+
+                <div class="tarjetas">
+                    <!-- Candidato 1 -->
+                    <article class="card tarjeta">
+                        <div class="tarjeta-media">
+                            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=500" alt="Video de Mateo Rivera" loading="lazy">
+                            <span class="badge badge-tiempo">0:58</span>
+                            <span class="badge badge-match">Match 98%</span>
+                            <button class="btn-play" type="button" aria-label="Reproducir video de Mateo Rivera">
+                                <i class="fa-solid fa-play" aria-hidden="true"></i>
+                            </button>
+                        </div>
+                        <div class="tarjeta-info">
+                            <h3>Mateo Rivera <span>25 años</span></h3>
+                            <p class="cargo">Diseñador UI/UX &amp; Web Flow</p>
+                            <div class="skills"><span>Figma</span><span>Design System</span></div>
+                            <button class="btn btn-morado btn-sm btn-block" type="button">
+                                <i class="fa-regular fa-user" aria-hidden="true"></i> Ver Perfil
+                            </button>
+                        </div>
+                    </article>
+
+                    <!-- Candidato 2 -->
+                    <article class="card tarjeta">
+                        <div class="tarjeta-media">
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=500" alt="Video de Lucas Lucena" loading="lazy">
+                            <span class="badge badge-tiempo">0:45</span>
+                            <span class="badge badge-match">Match 95%</span>
+                            <button class="btn-play" type="button" aria-label="Reproducir video de Lucas Lucena">
+                                <i class="fa-solid fa-play" aria-hidden="true"></i>
+                            </button>
+                        </div>
+                        <div class="tarjeta-info">
+                            <h3>Lucas Lucena <span>28 años</span></h3>
+                            <p class="cargo">Desarrollador Frontend Senior</p>
+                            <div class="skills"><span>React</span><span>TypeScript</span></div>
+                            <button class="btn btn-morado btn-sm btn-block" type="button">
+                                <i class="fa-regular fa-user" aria-hidden="true"></i> Ver Perfil
+                            </button>
+                        </div>
+                    </article>
+
+                    <!-- Candidato 3 -->
+                    <article class="card tarjeta">
+                        <div class="tarjeta-media">
+                            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=500" alt="Video de Camila Morales" loading="lazy">
+                            <span class="badge badge-tiempo">0:59</span>
+                            <span class="badge badge-match">Match 92%</span>
+                            <button class="btn-play" type="button" aria-label="Reproducir video de Camila Morales">
+                                <i class="fa-solid fa-play" aria-hidden="true"></i>
+                            </button>
+                        </div>
+                        <div class="tarjeta-info">
+                            <h3>Camila Morales <span>24 años</span></h3>
+                            <p class="cargo">Product Manager Junior</p>
+                            <div class="skills"><span>Agile</span><span>Scrum</span></div>
+                            <button class="btn btn-morado btn-sm btn-block" type="button">
+                                <i class="fa-regular fa-user" aria-hidden="true"></i> Ver Perfil
+                            </button>
+                        </div>
+                    </article>
+
+                    <!-- Candidato 4 -->
+                    <article class="card tarjeta">
+                        <div class="tarjeta-media">
+                            <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=500" alt="Video de Diego Alarcón" loading="lazy">
+                            <span class="badge badge-tiempo">0:50</span>
+                            <span class="badge badge-match">Match 90%</span>
+                            <button class="btn-play" type="button" aria-label="Reproducir video de Diego Alarcón">
+                                <i class="fa-solid fa-play" aria-hidden="true"></i>
+                            </button>
+                        </div>
+                        <div class="tarjeta-info">
+                            <h3>Diego Alarcón <span>30 años</span></h3>
+                            <p class="cargo">Especialista en Marketing Digital</p>
+                            <div class="skills"><span>Growth</span><span>SEO</span></div>
+                            <button class="btn btn-morado btn-sm btn-block" type="button">
+                                <i class="fa-regular fa-user" aria-hidden="true"></i> Ver Perfil
+                            </button>
+                        </div>
+                    </article>
+                </div>
+
+                <div class="centro">
+                    <button class="btn btn-blanco" type="button">
+                        Ver más candidatos <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                    </button>
+                </div>
+            </section>
+            </div>
+
+            <div class="vista" data-vista-content="procesos" hidden>
+<!-- PROCESO -->
+            <section id="procesos" class="seccion">
+                <div class="seccion-cabecera centro">
+                    <div>
+                        <span class="badge badge-coral">Proceso para candidatos</span>
+                        <h2>¿Cómo funciona en 60 segundos?</h2>
+                        <p>Sin cartas eternas. Tu talento, tu voz y tus proyectos.</p>
+                    </div>
+                </div>
+
+                <div class="pasos">
+                    <article class="card paso">
+                        <span class="paso-numero">PASO 01</span>
+                        <h3><i class="fa-solid fa-video" aria-hidden="true"></i> Graba tu pitch</h3>
+                        <p>Cuéntanos quién eres, qué has logrado y qué buscas.</p>
+                        <ul class="lista-check">
+                            <li>¿Quién eres y qué aportas?</li>
+                            <li>¿Tus proyectos más relevantes?</li>
+                            <li>¿Qué buscas en tu próximo rol?</li>
+                        </ul>
+                    </article>
+
+                    <article class="card paso">
+                        <span class="paso-numero">PASO 02</span>
+                        <h3><i class="fa-solid fa-file-pdf" aria-hidden="true"></i> Adjunta tu CV</h3>
+                        <p>Suma tu experiencia con un PDF corto y claro.</p>
+                        <div class="preview-pdf">
+                            <i class="fa-regular fa-file-pdf" aria-hidden="true"></i>
+                            <div><strong>Mi_CV_Oficial.pdf</strong><span>Documento validado</span></div>
+                        </div>
+                    </article>
+
+                    <article class="card paso">
+                        <span class="paso-numero">PASO 03</span>
+                        <h3><i class="fa-solid fa-bolt" aria-hidden="true"></i> Conecta rápido</h3>
+                        <p>Las empresas ven tu perfil y te contactan en horas.</p>
+                        <div class="alerta">
+                            <i class="fa-solid fa-bell" aria-hidden="true"></i> Una empresa solicitó entrevista
+                        </div>
+                    </article>
+                </div>
+            </section>
+            </div>
+
+            <div class="vista" data-vista-content="mensajes" hidden>
+<!-- VACANTES -->
+            <section id="mensajes" class="seccion">
+                <div class="card buscador-card">
+                    <div class="seccion-cabecera">
+                        <div>
+                            <span class="badge badge-lila">Vacantes</span>
+                            <h2>Encuentra vacantes que evalúan por video</h2>
+                            <p>Aplica mostrando tu talento, sin filtros automáticos de texto.</p>
+                        </div>
+                    </div>
+
+                    <div class="buscador">
+                        <input type="text" placeholder="Puesto, empresa o palabra clave...">
+                        <input type="text" placeholder="Ciudad o remoto">
+                        <button class="btn btn-morado" type="button">
+                            <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i> Buscar
+                        </button>
+                    </div>
+
+                    <div class="categorias">
+                        <article class="card categoria"><i class="fa-solid fa-code" aria-hidden="true"></i><strong>Tecnología</strong><span>140+ vacantes</span></article>
+                        <article class="card categoria"><i class="fa-solid fa-palette" aria-hidden="true"></i><strong>Diseño &amp; UX</strong><span>85+ vacantes</span></article>
+                        <article class="card categoria"><i class="fa-solid fa-bullhorn" aria-hidden="true"></i><strong>Marketing</strong><span>210+ vacantes</span></article>
+                        <article class="card categoria"><i class="fa-solid fa-chart-simple" aria-hidden="true"></i><strong>Ventas</strong><span>95+ vacantes</span></article>
+                        <article class="card categoria"><i class="fa-solid fa-headset" aria-hidden="true"></i><strong>Atención al Cliente</strong><span>60+ vacantes</span></article>
+                        <article class="card categoria"><i class="fa-solid fa-coins" aria-hidden="true"></i><strong>Finanzas</strong><span>45+ vacantes</span></article>
                     </div>
                 </div>
             </section>
+            </div>
 
-            <!-- SECCIÓN: BUSCADOR DE VACANTES Y CATEGORÍAS -->
-            <section id="mensajes" class="seccion-vacantes">
-                <div class="encabezado-centro">
-                    <h2>Encuentra vacantes que evalúan por video</h2>
-                    <p>Aplica directamente mostrando tu talento sin pasar por filtros automatizados de texto.</p>
-                </div>
-
-                <!-- Buscador secundario con botón azul -->
-                <div class="barramenu-vacantes">
-                    <input type="text" placeholder="Puesto, empresa o palabra clave...">
-                    <input type="text" placeholder="📍 Ciudad o remoto">
-                    <button class="btn-buscar-vacante" type="button">Buscar Vacantes</button>
-                </div>
-
-                <!-- Categorías populares -->
-                <div class="grid-categorias">
-                    <div class="item-categoria">
-                        <span class="icono-cat">💻</span>
-                        <strong>Tecnología</strong>
-                        <small>140+ vacantes</small>
-                    </div>
-                    <div class="item-categoria">
-                        <span class="icono-cat">🎨</span>
-                        <strong>Diseño & UX</strong>
-                        <small>85+ vacantes</small>
-                    </div>
-                    <div class="item-categoria">
-                        <span class="icono-cat">📈</span>
-                        <strong>Ventas & Mkt</strong>
-                        <small>210+ vacantes</small>
-                    </div>
-                    <div class="item-categoria">
-                        <span class="icono-cat">🎧</span>
-                        <strong>Atención al Cliente</strong>
-                        <small>95+ vacantes</small>
-                    </div>
-                </div>
-            </section>
-
-            <!-- BANNER FINAL CTA -->
-            <section class="banner-cta-final">
-                <div class="contenido-cta">
+<!-- CTA FINAL -->
+            <section class="cta">
+                <div>
                     <h2>Tu carrera profesional comienza con 60 segundos.</h2>
-                    <p>Crea tu cuenta gratis, graba tu video y conecta con empresas hoy mismo.</p>
+                    <p>Crea tu cuenta gratis, graba tu video y conecta hoy.</p>
                 </div>
-                <button class="btn-crear-cuenta" type="button">Crear mi Videocurrículum</button>
+                <button class="btn btn-blanco" type="button" data-vista="procesos">
+                    Crear mi Videocurrículum <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                </button>
             </section>
         </main>
 
+        <!-- FOOTER -->
         <footer class="footer">
-            <span class="logo-texto">Talento<span class="logo-numero">60</span></span>
-            <p>El talento no cabe en una hoja.</p>
-            <p class="footer-copy">© 2026 Talento 60 · Proyecto frontend de demostración.</p>
+            <div class="footer-inner">
+                <div>
+                    <div class="footer-logo">Talento<span>60</span></div>
+                    <div class="footer-copy">© 2026 Talento 60</div>
+                </div>
+
+                <nav class="footer-links" aria-label="Enlaces del pie">
+                    <a href="#inicio" data-vista="inicio">Inicio</a>
+                    <a href="#feed" data-vista="feed">Candidatos</a>
+                    <a href="#procesos" data-vista="procesos">Cómo funciona</a>
+                    <a href="#mensajes" data-vista="mensajes">Vacantes</a>
+                </nav>
+
+                <div class="footer-stats">
+                    <div><strong>+12.4k</strong><span>Candidatos</span></div>
+                    <div><strong>60s</strong><span>Video</span></div>
+                </div>
+            </div>
         </footer>
     </div>
 
-    <!-- MODAL DE INICIO DE SESIÓN -->
+    <!-- ============================================================
+         MODAL DE LOGIN
+         ============================================================ -->
     <div class="modal-login" id="modalLogin" role="dialog" aria-modal="true" aria-labelledby="loginTitulo" hidden>
         <div class="modal-login-contenido">
             <button class="modal-cerrar" id="btnCerrarLogin" type="button" aria-label="Cerrar">×</button>
@@ -393,54 +439,89 @@
     </div>
 
     <script>
-        const btnComenzar = document.getElementById("btnComenzar");
         const bienvenida = document.getElementById("bienvenida");
         const pagina = document.getElementById("pagina");
+        const modal = document.getElementById("modalLogin");
+        let origenLogin = null;
 
-        btnComenzar.addEventListener("click", function () {
-            bienvenida.style.display = "none";
-            pagina.classList.remove("pagina-oculta");
-            window.scrollTo({ top: 0, behavior: "auto" });
-        });
-
-        /* MODAL DE INICIO DE SESIÓN */
-        const btnIniciarSesion = document.getElementById("btnIniciarSesion");
-        const modalLogin = document.getElementById("modalLogin");
-        const btnCerrarLogin = document.getElementById("btnCerrarLogin");
-        const loginForm = document.getElementById("loginForm");
-        const loginMsg = document.getElementById("loginMsg");
-        const campoEmail = document.getElementById("email");
-
-        function abrirLogin() {
-            modalLogin.hidden = false;
-            document.body.classList.add("modal-abierto");
-            campoEmail.focus();
+        // Muestra la landing
+        function mostrarPagina() {
+            bienvenida.hidden = true;
+            pagina.hidden = false;
+            mostrarVista(location.hash.slice(1) || "inicio");
         }
 
-        function cerrarLogin() {
-            modalLogin.hidden = true;
-            document.body.classList.remove("modal-abierto");
-            btnIniciarSesion.focus();
+        // Vuelve a la pantalla de bienvenida desde el logo
+        function volverAlInicio() {
+            pagina.hidden = true;
+            bienvenida.hidden = false;
+            mostrarVista("inicio", false);
+            history.replaceState(null, "", location.pathname + location.search);
         }
 
-        btnIniciarSesion.addEventListener("click", abrirLogin);
-        btnCerrarLogin.addEventListener("click", cerrarLogin);
+        // Vistas dentro de una sola página
+        const vistas = document.querySelectorAll("[data-vista-content]");
+        const enlacesVista = document.querySelectorAll("[data-vista]");
 
-        modalLogin.addEventListener("click", function (evento) {
-            if (evento.target === modalLogin) {
-                cerrarLogin();
+        function mostrarVista(id, actualizarHash = true) {
+            const destino = [...vistas].some(v => v.dataset.vistaContent === id) ? id : "inicio";
+            vistas.forEach(v => { v.hidden = v.dataset.vistaContent !== destino; });
+            document.querySelectorAll(".menu a[data-vista]").forEach(a => {
+                a.classList.toggle("activo", a.dataset.vista === destino);
+            });
+            if (actualizarHash && location.hash !== "#" + destino) {
+                history.replaceState(null, "", location.pathname + location.search + "#" + destino);
             }
+            window.scrollTo(0, 0);
+        }
+
+        enlacesVista.forEach(el => el.addEventListener("click", (evento) => {
+            evento.preventDefault();
+            mostrarVista(el.dataset.vista);
+        }));
+
+        // Si la URL trae una vista, se abre directo en ella; si no, se muestra la bienvenida.
+        const vistaInicial = location.hash.slice(1);
+        if (vistaInicial && [...vistas].some(v => v.dataset.vistaContent === vistaInicial)) {
+            bienvenida.hidden = true;
+            pagina.hidden = false;
+            mostrarVista(vistaInicial, false);
+        } else {
+            mostrarVista("inicio", false);
+        }
+
+        // Abre el modal de login
+        function abrirLogin(evento) {
+            origenLogin = evento.currentTarget;
+            modal.hidden = false;
+            document.body.classList.add("modal-abierto");
+            document.getElementById("email").focus();
+        }
+
+        // Cierra el modal de login
+        function cerrarLogin() {
+            modal.hidden = true;
+            document.body.classList.remove("modal-abierto");
+            if (origenLogin) origenLogin.focus();
+        }
+
+        document.getElementById("btnComenzar").addEventListener("click", mostrarPagina);
+        document.getElementById("logoInicio").addEventListener("click", volverAlInicio);
+        document.getElementById("btnLogin").addEventListener("click", abrirLogin);
+        document.getElementById("btnIniciarSesion").addEventListener("click", abrirLogin);
+        document.getElementById("btnCerrarLogin").addEventListener("click", cerrarLogin);
+
+        modal.addEventListener("click", function (evento) {
+            if (evento.target === modal) cerrarLogin();
         });
 
         document.addEventListener("keydown", function (evento) {
-            if (evento.key === "Escape" && !modalLogin.hidden) {
-                cerrarLogin();
-            }
+            if (evento.key === "Escape" && !modal.hidden) cerrarLogin();
         });
 
-        loginForm.addEventListener("submit", function (evento) {
+        document.getElementById("loginForm").addEventListener("submit", function (evento) {
             evento.preventDefault();
-            loginMsg.textContent = "Formulario demostrativo: falta conectar el backend.";
+            document.getElementById("loginMsg").textContent = "Formulario demostrativo: falta conectar el backend.";
         });
     </script>
 </body>
