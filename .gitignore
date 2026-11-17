@@ -1,2 +1,5 @@
-# Documentación local: no se sube al repositorio
-documentacion/
+node_modules
+.env
+
+
+
