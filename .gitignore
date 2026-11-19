@@ -1,4 +1,13 @@
 # Documentación local: no se sube al repositorio
 documentacion/
 .env
-node_modules
+.env.local
+.env.*.local
+atlas-credentials.env
+node_modules/
+dist/
+
+# Videos locales de prueba: no se suben al repositorio
+*.mp4
+*.webm
+*.mov

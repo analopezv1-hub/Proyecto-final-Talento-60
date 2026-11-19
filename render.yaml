@@ -1,0 +1,30 @@
+# Configuración del backend en Render.
+services:
+  - type: web
+    name: talento-60-api
+    runtime: node
+    plan: free # Plan gratuito: se duerme tras 15 minutos sin tráfico.
+    region: oregon
+    buildCommand: npm ci
+    startCommand: npm start
+    healthCheckPath: /api/salud # Render comprueba que el backend responde.
+    autoDeployTrigger: commit
+    envVars:
+      - key: MONGO_URI # Cadena de Atlas; se pega en el dashboard.
+        sync: false
+      - key: JWT_SECRET # Render genera una clave segura.
+        generateValue: true
+      - key: FRONTEND_URL # Origen permitido por CORS.
+        sync: false
+      - key: AI_API_URL
+        value: https://api.openai.com/v1/chat/completions
+      - key: AI_MODEL
+        value: gpt-4o-mini
+      # Cloudinary: completar en el dashboard de Render.
+      - key: CLOUDINARY_CLOUD_NAME
+        sync: false
+      - key: CLOUDINARY_API_KEY
+        sync: false
+      - key: CLOUDINARY_API_SECRET
+        sync: false
+      # Agregar AI_API_KEY en el dashboard de Render cuando esté disponible.
