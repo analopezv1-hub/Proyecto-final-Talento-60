@@ -1487,3 +1487,67 @@ body.modal-abierto {
     font: inherit;
     margin-bottom: 1rem;
 }
+/* ===== Animaciones ===== */
+
+@keyframes subir {
+    from { opacity: 0; transform: translateY(24px); }
+    to   { opacity: 1; transform: none; }
+}
+
+@keyframes aparecerModal {
+    from { opacity: 0; transform: translateY(20px) scale(0.97); }
+    to   { opacity: 1; transform: none; }
+}
+
+@keyframes pulso {
+    0%   { box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.55); }
+    70%  { box-shadow: 0 0 0 16px rgba(255, 255, 255, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(255, 255, 255, 0); }
+}
+
+/* Entrada de la bienvenida */
+.bienvenida-contenido > * { animation: subir 0.7s ease backwards; }
+.bienvenida-contenido > *:nth-child(1) { animation-delay: 0.10s; }
+.bienvenida-contenido > *:nth-child(2) { animation-delay: 0.20s; }
+.bienvenida-contenido > *:nth-child(3) { animation-delay: 0.30s; }
+.bienvenida-contenido > *:nth-child(4) { animation-delay: 0.40s; }
+.bienvenida-contenido > *:nth-child(5) { animation-delay: 0.50s; }
+
+/* Aparición al hacer scroll */
+.reveal { opacity: 0; }
+.reveal.visible {
+    opacity: 1;
+    animation: subir 0.6s ease backwards;
+    animation-delay: var(--retraso, 0s);
+}
+
+/* Efecto al pasar el mouse */
+.tarjeta, .categoria, .metrica, .paso {
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.tarjeta:hover, .categoria:hover, .metrica:hover, .paso:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 14px 30px rgba(0, 0, 0, 0.12);
+}
+
+.btn, .btn-comenzar {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.btn:hover, .btn-comenzar:hover { transform: translateY(-2px); }
+.btn:active, .btn-comenzar:active { transform: scale(0.98); }
+
+/*Cambio ntre vistas y al abrir el login */
+.vista { animation: subir 0.45s ease; }
+.modal-login-contenido { animation: aparecerModal 0.3s ease; }
+
+/* Pulso en el botón de reproducir */
+.btn-play { animation: pulso 2s infinite; }
+
+/* Respeta a quien prefiere menos movimiento */
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation: none !important;
+        transition: none !important;
+    }
+    .reveal { opacity: 1; }
+}
