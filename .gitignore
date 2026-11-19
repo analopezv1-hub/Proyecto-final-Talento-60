@@ -1,2 +1,4 @@
 # Documentación local: no se sube al repositorio
 documentacion/
+.env
+node_modules
