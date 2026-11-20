@@ -1,0 +1,32 @@
+[1mdiff --git a/backend/server.js b/backend/server.js[m
+[1mindex 10a1b70..50e16d2 100644[m
+[1m--- a/backend/server.js[m
+[1m+++ b/backend/server.js[m
+[36m@@ -28,7 +28,7 @@[m [mconst Usuario = mongoose.model('Usuario', usuarioSchema);[m
+ app.post('/registro', async (req, res) => {[m
+   const { nombre, email, password, rol } = req.body;[m
+ [m
+[31m-  if (!email || !password) {[m
+[32m+[m[32m  if (typeof email !== 'string' || typeof password !== 'string' || !email || !password) {[m
+     return res.status(400).json({ error: 'Faltan datos' });[m
+   }[m
+   if (!/^\S+@\S+\.\S+$/.test(email)) {[m
+[36m@@ -58,7 +58,7 @@[m [mapp.post('/registro', async (req, res) => {[m
+ app.post('/login', async (req, res) => {[m
+   const { email, password } = req.body;[m
+ [m
+[31m-  if (!email || !password) {[m
+[32m+[m[32m  if (typeof email !== 'string' || typeof password !== 'string' || !email || !password) {[m
+     return res.status(400).json({ error: 'Faltan datos' });[m
+   }[m
+ [m
+[36m@@ -106,4 +106,9 @@[m [mapp.get('/perfil', verificarToken, async (req, res) => {[m
+   res.json(usuario);[m
+ });[m
+ [m
+[32m+[m[32mapp.use((err, req, res, next) => {[m
+[32m+[m[32m  console.error(err);[m
+[32m+[m[32m  const estado = err.status || 500;[m
+[32m+[m[32m  res.status(estado).json({ error: estado === 500 ? 'Error del servidor' : 'Solicitud no válida' });[m
+[32m+[m[32m});[m
+ app.listen(3000, () => console.log('Servidor en http://localhost:3000'));[m
