@@ -90,26 +90,24 @@ export default function Inicio({ onNavegar }) {
         <div className="hero-video">
           <div className="video-card">
             <img
-              src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=500"
+              src="talento60at.jpg"
               alt="Vista previa del videocurrículum de Sofía Serna"
             />
             <span className="badge badge-tiempo">0:60</span>
             <button
-              className="btn-play"
-              type="button"
-              aria-label="Reproducir video de Sofía Serna"
+        
             >
               <i className="fa-solid fa-play" aria-hidden="true" />
             </button>
             <div className="video-info">
               <strong>
-                Sofía Serna
+                
                 <span className="verificado">
                   <i className="fa-solid fa-circle-check" aria-hidden="true" />{" "}
                   Verificada
                 </span>
               </strong>
-              <span className="rol">Diseñadora UX/UI</span>
+              <span className="rol">Tania y Ana</span>
               <span className="badge badge-match">Match 98%</span>
             </div>
           </div>

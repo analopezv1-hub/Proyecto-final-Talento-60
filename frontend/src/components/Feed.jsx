@@ -7,17 +7,48 @@ import TarjetaCandidato from "./TarjetaCandidato.jsx";
 // Categorías que se muestran en los botones de filtro.
 const CATEGORIAS = ["Todos", "Diseño UX", "Desarrollo", "Marketing", "Producto"];
 
+<<<<<<< HEAD
+=======
+// Descripciones de los perfiles demo, escritas según su profesión.
+const DESCRIPCIONES_DEMO = new Map(
+  CANDIDATOS.map((candidato) => [String(candidato.id), candidato.descripcion]),
+);
+
+// Para videos reales, la descripción se arma con el cargo y las habilidades.
+function descripcionDe(candidato) {
+  if (candidato.descripcion) return candidato.descripcion;
+  const skills = Array.isArray(candidato.skills) ? candidato.skills : [];
+  const habilidades = skills.length
+    ? ` Sus habilidades principales son ${skills.join(", ")}.`
+    : "";
+  return `${candidato.nombre} se presenta para el rol de ${candidato.cargo || "candidato"}.${habilidades} Un videocurrículum breve para conocer su forma de comunicarse.`;
+}
+
+>>>>>>> c357cb59b3765412cbead97dff2bf4c26e8bc65e
 export default function Feed() {
   // categoria es el filtro activo; candidatos guarda los datos del feed.
   const [categoria, setCategoria] = useState("Todos");
   const [candidatos, setCandidatos] = useState(CANDIDATOS);
   // Video que se abre en el modal, si la tarjeta tiene uno real.
   const [videoActivo, setVideoActivo] = useState(null);
+<<<<<<< HEAD
 
   // Cierra el modal con Escape.
   useEffect(() => {
     const alPresionar = (evento) => {
       if (evento.key === "Escape") setVideoActivo(null);
+=======
+  // Perfil que se abre desde la tarjeta.
+  const [perfilActivo, setPerfilActivo] = useState(null);
+
+  // Cierra los modales con Escape.
+  useEffect(() => {
+    const alPresionar = (evento) => {
+      if (evento.key === "Escape") {
+        setVideoActivo(null);
+        setPerfilActivo(null);
+      }
+>>>>>>> c357cb59b3765412cbead97dff2bf4c26e8bc65e
     };
     document.addEventListener("keydown", alPresionar);
     return () => document.removeEventListener("keydown", alPresionar);
@@ -30,7 +61,19 @@ export default function Feed() {
     apiFetch("/api/candidatos")
       .then((datos) => {
         if (activo && Array.isArray(datos) && datos.length > 0) {
+<<<<<<< HEAD
           setCandidatos(datos);
+=======
+          setCandidatos(
+            datos.map((candidato) => ({
+              ...candidato,
+              descripcion:
+                candidato.descripcion ||
+                DESCRIPCIONES_DEMO.get(String(candidato.id)) ||
+                descripcionDe(candidato),
+            })),
+          );
+>>>>>>> c357cb59b3765412cbead97dff2bf4c26e8bc65e
         }
       })
       .catch(() => {});
@@ -77,10 +120,106 @@ export default function Feed() {
               key={candidato.id}
               {...candidato}
               onVerVideo={setVideoActivo}
+<<<<<<< HEAD
+=======
+              onVerPerfil={setPerfilActivo}
+>>>>>>> c357cb59b3765412cbead97dff2bf4c26e8bc65e
             />
           ))}
         </div>
 
+<<<<<<< HEAD
+=======
+        {perfilActivo && (
+          <div
+            className="modal-video modal-perfil"
+            role="dialog"
+            aria-modal="true"
+            aria-label={`Perfil de ${perfilActivo.nombre}`}
+            onClick={() => setPerfilActivo(null)}
+          >
+            <div
+              className="modal-perfil-contenido"
+              onClick={(evento) => evento.stopPropagation()}
+            >
+              <button
+                className="modal-cerrar"
+                type="button"
+                onClick={() => setPerfilActivo(null)}
+                aria-label="Cerrar perfil"
+              >
+                ×
+              </button>
+
+              <div className="modal-perfil-grid">
+                {perfilActivo.imagen ? (
+                  <img
+                    src={perfilActivo.imagen}
+                    alt={`Perfil de ${perfilActivo.nombre}`}
+                  />
+                ) : (
+                  <div className="modal-perfil-sin-imagen" aria-hidden="true">
+                    <i className="fa-regular fa-user" />
+                  </div>
+                )}
+
+                <div className="modal-perfil-info">
+                  <span className="badge badge-lila">
+                    {perfilActivo.categoria || "Candidato"}
+                  </span>
+                  <h3>
+                    {perfilActivo.nombre}{" "}
+                    {perfilActivo.edad ? (
+                      <span>{perfilActivo.edad} años</span>
+                    ) : null}
+                  </h3>
+                  <p className="cargo">{perfilActivo.cargo}</p>
+                  <p className="modal-perfil-descripcion">
+                    {perfilActivo.descripcion ||
+                      descripcionDe(perfilActivo)}
+                  </p>
+
+                  {Array.isArray(perfilActivo.skills) &&
+                    perfilActivo.skills.length > 0 && (
+                      <div className="skills">
+                        {perfilActivo.skills.map((skill) => (
+                          <span key={skill}>{skill}</span>
+                        ))}
+                      </div>
+                    )}
+
+                  <p className="perfil-video-detalle">
+                    {perfilActivo.duracion || "0:60"}
+                    {perfilActivo.match != null
+                      ? ` · Match ${perfilActivo.match}%`
+                      : perfilActivo.esVideoSubido
+                        ? " · Video subido"
+                        : ""}
+                  </p>
+
+                  {perfilActivo.videoUrl && (
+                    <button
+                      className="btn btn-morado btn-sm"
+                      type="button"
+                      onClick={() => {
+                        setVideoActivo({
+                          nombre: perfilActivo.nombre,
+                          videoUrl: perfilActivo.videoUrl,
+                        });
+                        setPerfilActivo(null);
+                      }}
+                    >
+                      <i className="fa-solid fa-play" aria-hidden="true" /> Ver
+                      video
+                    </button>
+                  )}
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
+
+>>>>>>> c357cb59b3765412cbead97dff2bf4c26e8bc65e
         {videoActivo && (
           <div
             className="modal-video"
