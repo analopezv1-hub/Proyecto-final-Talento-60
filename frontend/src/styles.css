@@ -47,9 +47,6 @@ button {
 
 /* Todo el sitio usa la misma serif editorial, tipo Times New Roman. */
 #pagina {
-<<<<<<< HEAD
-    font-family: var(--fuente-principal);
-=======
     min-height: 100vh;
     font-family: var(--fuente-principal);
     background-color: var(--fondo);
@@ -60,7 +57,6 @@ button {
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
->>>>>>> c357cb59b3765412cbead97dff2bf4c26e8bc65e
 }
 
 #pagina button,
@@ -249,33 +245,18 @@ button {
 .navbar-inner {
     max-width: 1120px;
     margin: 0 auto;
-<<<<<<< HEAD
-    padding: 10px 20px 0;
-=======
     padding: 12px 20px;
->>>>>>> c357cb59b3765412cbead97dff2bf4c26e8bc65e
 }
 
 .navbar-fila {
     display: flex;
     align-items: center;
     justify-content: space-between;
-<<<<<<< HEAD
-    gap: 16px;
-=======
     gap: 18px;
->>>>>>> c357cb59b3765412cbead97dff2bf4c26e8bc65e
 }
 
 .navbar-acciones {
     display: flex;
-<<<<<<< HEAD
-    align-items: center;
-    gap: 12px;
-}
-
-.logo {
-=======
     flex-shrink: 0;
     align-items: center;
     gap: 10px;
@@ -283,20 +264,13 @@ button {
 
 .logo {
     flex-shrink: 0;
->>>>>>> c357cb59b3765412cbead97dff2bf4c26e8bc65e
     padding: 0;
     border: 0;
     background: none;
     color: var(--tinta);
-<<<<<<< HEAD
-    font-size: 22px;
-    font-weight: 800;
-    letter-spacing: -1px;
-=======
     font-size: 28px;
     font-weight: 800;
     letter-spacing: -1.2px;
->>>>>>> c357cb59b3765412cbead97dff2bf4c26e8bc65e
     text-decoration: none;
 }
 
@@ -331,20 +305,6 @@ button {
 
 .menu {
     display: flex;
-<<<<<<< HEAD
-    flex-wrap: wrap;
-    gap: 4px;
-    padding: 8px 0 10px;
-}
-
-.menu a {
-    padding: 7px 14px;
-    border-radius: 999px;
-    color: var(--gris);
-    font-size: 13px;
-    font-weight: 600;
-    text-decoration: none;
-=======
     flex: 1;
     flex-wrap: nowrap;
     justify-content: flex-start;
@@ -361,7 +321,6 @@ button {
     font-weight: 600;
     text-decoration: none;
     white-space: nowrap;
->>>>>>> c357cb59b3765412cbead97dff2bf4c26e8bc65e
 }
 
 .menu a:hover {
@@ -1375,11 +1334,7 @@ body.modal-abierto {
     }
 
     .logo {
-<<<<<<< HEAD
-        font-size: 19px;
-=======
         font-size: 22px;
->>>>>>> c357cb59b3765412cbead97dff2bf4c26e8bc65e
     }
 
     .navbar-acciones {
@@ -2587,8 +2542,6 @@ body.modal-abierto {
         grid-template-columns: 1fr;
     }
 }
-<<<<<<< HEAD
-=======
 
 /* ---------- ACCIONES DE TARJETA Y PERFIL ---------- */
 .tarjeta-acciones {
@@ -2709,4 +2662,3 @@ body.modal-abierto {
         padding-top: 4px;
     }
 }
->>>>>>> c357cb59b3765412cbead97dff2bf4c26e8bc65e

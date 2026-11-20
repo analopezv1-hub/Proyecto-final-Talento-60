@@ -6,11 +6,8 @@ export const CANDIDATOS = [
     edad: 25,
     cargo: "Diseñador UI/UX & Web Flow",
     categoria: "Diseño UX",
-<<<<<<< HEAD
-=======
     descripcion:
       "Diseñador UI/UX con experiencia en investigación, prototipado y sistemas de diseño. Le gusta convertir problemas complejos en interfaces claras y fáciles de usar.",
->>>>>>> c357cb59b3765412cbead97dff2bf4c26e8bc65e
     skills: ["Figma", "Design System"],
     duracion: "0:58",
     match: 98,
@@ -23,11 +20,8 @@ export const CANDIDATOS = [
     edad: 28,
     cargo: "Desarrollador Frontend Senior",
     categoria: "Desarrollo",
-<<<<<<< HEAD
-=======
     descripcion:
       "Desarrollador frontend senior especializado en React y TypeScript. Disfruta construir productos accesibles, mantenibles y con una experiencia de usuario cuidada.",
->>>>>>> c357cb59b3765412cbead97dff2bf4c26e8bc65e
     skills: ["React", "TypeScript"],
     duracion: "0:45",
     match: 95,
@@ -40,11 +34,8 @@ export const CANDIDATOS = [
     edad: 24,
     cargo: "Product Manager Junior",
     categoria: "Producto",
-<<<<<<< HEAD
-=======
     descripcion:
       "Product Manager junior con experiencia en equipos ágiles, priorización de historias y comunicación entre negocio y tecnología. Busca productos que resuelvan problemas reales.",
->>>>>>> c357cb59b3765412cbead97dff2bf4c26e8bc65e
     skills: ["Agile", "Scrum"],
     duracion: "0:59",
     match: 92,
@@ -57,11 +48,8 @@ export const CANDIDATOS = [
     edad: 30,
     cargo: "Especialista en Marketing Digital",
     categoria: "Marketing",
-<<<<<<< HEAD
-=======
     descripcion:
       "Especialista en marketing digital con enfoque en crecimiento, posicionamiento SEO y análisis de resultados. Conecta estrategia, contenido y datos para atraer audiencias.",
->>>>>>> c357cb59b3765412cbead97dff2bf4c26e8bc65e
     skills: ["Growth", "SEO"],
     duracion: "0:50",
     match: 90,

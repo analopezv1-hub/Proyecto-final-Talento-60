@@ -4,10 +4,7 @@ export default function TarjetaCandidato({
   edad,
   cargo,
   categoria,
-<<<<<<< HEAD
-=======
   descripcion,
->>>>>>> c357cb59b3765412cbead97dff2bf4c26e8bc65e
   skills,
   duracion,
   match,
@@ -15,17 +12,12 @@ export default function TarjetaCandidato({
   videoUrl,
   esVideoSubido,
   onVerVideo,
-<<<<<<< HEAD
-=======
   onVerPerfil,
->>>>>>> c357cb59b3765412cbead97dff2bf4c26e8bc65e
 }) {
   const abrirVideo = () => {
     if (videoUrl) onVerVideo?.({ nombre, videoUrl });
   };
 
-<<<<<<< HEAD
-=======
   const abrirPerfil = () => {
     onVerPerfil?.({
       nombre,
@@ -42,7 +34,6 @@ export default function TarjetaCandidato({
     });
   };
 
->>>>>>> c357cb59b3765412cbead97dff2bf4c26e8bc65e
   return (
     // La tarjeta se divide en imagen, datos y habilidades.
     <article className="card tarjeta" data-categoria={categoria}>
@@ -61,16 +52,6 @@ export default function TarjetaCandidato({
         ) : (
           esVideoSubido && <span className="badge badge-nuevo">Nuevo</span>
         )}
-<<<<<<< HEAD
-        <button
-          className="btn-play"
-          type="button"
-          onClick={abrirVideo}
-          aria-label={`Reproducir video de ${nombre}`}
-        >
-          <i className="fa-solid fa-play" aria-hidden="true" />
-        </button>
-=======
         {videoUrl && (
           <button
             className="btn-play"
@@ -81,7 +62,6 @@ export default function TarjetaCandidato({
             <i className="fa-solid fa-play" aria-hidden="true" />
           </button>
         )}
->>>>>>> c357cb59b3765412cbead97dff2bf4c26e8bc65e
       </div>
 
       <div className="tarjeta-info">
@@ -96,19 +76,6 @@ export default function TarjetaCandidato({
             <span key={skill}>{skill}</span>
           ))}
         </div>
-<<<<<<< HEAD
-        <button
-          className="btn btn-morado btn-sm btn-block"
-          type="button"
-          onClick={abrirVideo}
-        >
-          <i
-            className={videoUrl ? "fa-solid fa-play" : "fa-regular fa-user"}
-            aria-hidden="true"
-          />{" "}
-          {videoUrl ? "Ver video" : "Ver Perfil"}
-        </button>
-=======
         <div className="tarjeta-acciones">
           <button
             className="btn btn-morado btn-sm btn-block"
@@ -118,7 +85,6 @@ export default function TarjetaCandidato({
             <i className="fa-regular fa-user" aria-hidden="true" /> Ver perfil
           </button>
         </div>
->>>>>>> c357cb59b3765412cbead97dff2bf4c26e8bc65e
       </div>
     </article>
   );

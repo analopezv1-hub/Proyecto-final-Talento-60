@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-// Barra superior: navegación, sesión y botón de login.
-=======
 // Barra superior: logo, navegación, sesión y botón de login.
->>>>>>> c357cb59b3765412cbead97dff2bf4c26e8bc65e
 import avatar from "../Imagenes/avatar.svg";
 
 // Enlaces de las cuatro vistas principales.
@@ -46,8 +42,6 @@ export default function Navbar({
             Talento<span>60</span>
           </button>
 
-<<<<<<< HEAD
-=======
           <nav className="menu" aria-label="Navegación principal">
             {enlaces.map(({ id, texto }) => (
               <a
@@ -76,7 +70,6 @@ export default function Navbar({
             )}
           </nav>
 
->>>>>>> c357cb59b3765412cbead97dff2bf4c26e8bc65e
           <div className="navbar-acciones">
             {esEmpresa ? (
               <button
@@ -131,37 +124,6 @@ export default function Navbar({
             </button>
           </div>
         </div>
-<<<<<<< HEAD
-
-        <nav className="menu" aria-label="Navegación principal">
-          {enlaces.map(({ id, texto }) => (
-            <a
-              key={id}
-              href={`#${id}`}
-              className={vista === id ? "activo" : ""}
-              onClick={(evento) => {
-                evento.preventDefault();
-                onNavegar(id);
-              }}
-            >
-              {texto}
-            </a>
-          ))}
-          {sesion && (
-            <a
-              href="#perfil"
-              className={vista === "perfil" ? "activo" : ""}
-              onClick={(evento) => {
-                evento.preventDefault();
-                onPerfil?.();
-              }}
-            >
-              {esEmpresa ? "Perfil de empresa" : "Mi perfil"}
-            </a>
-          )}
-        </nav>
-=======
->>>>>>> c357cb59b3765412cbead97dff2bf4c26e8bc65e
       </div>
     </header>
   );
