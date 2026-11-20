@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="base" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#FFFFFF"/>
+      <stop offset="0.48" stop-color="#F8F7FF"/>
+      <stop offset="1" stop-color="#F1E8FF"/>
+    </linearGradient>
+    <radialGradient id="halo" cx="50%" cy="50%" r="50%">
+      <stop offset="0" stop-color="#D7A8FF" stop-opacity="0.72"/>
+      <stop offset="1" stop-color="#D7A8FF" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="wave1" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#E8E0FF"/>
+      <stop offset="1" stop-color="#B49AFF"/>
+    </linearGradient>
+    <linearGradient id="wave2" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#F4EEFF"/>
+      <stop offset="1" stop-color="#CBB8FF"/>
+    </linearGradient>
+    <filter id="suave" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="45"/>
+    </filter>
+  </defs>
+
+  <rect width="1600" height="900" fill="url(#base)"/>
+
+  <!-- Mancha suave superior izquierda -->
+  <path d="M0 0 L620 0 C560 150 390 250 190 290 C110 305 45 310 0 305 Z"
+        fill="#EDE8FF" opacity="0.78"/>
+
+  <!-- Halo lila superior derecho -->
+  <ellipse cx="1350" cy="220" rx="540" ry="390" fill="url(#halo)" filter="url(#suave)"/>
+
+  <!-- Onda inferior clara -->
+  <path d="M0 690 C210 590 390 640 570 700 C760 760 930 800 1110 760 C1300 720 1450 660 1600 700 L1600 900 L0 900 Z"
+        fill="url(#wave2)" opacity="0.82"/>
+
+  <!-- Onda inferior principal -->
+  <path d="M0 770 C250 680 430 735 625 795 C820 855 1020 845 1210 800 C1380 760 1495 740 1600 780 L1600 900 L0 900 Z"
+        fill="url(#wave1)" opacity="0.72"/>
+
+  <!-- Detalle lavanda inferior izquierdo -->
+  <path d="M0 790 C120 745 235 760 330 800 C390 825 430 850 440 900 L0 900 Z"
+        fill="#D8C9FF" opacity="0.45"/>
+</svg>
