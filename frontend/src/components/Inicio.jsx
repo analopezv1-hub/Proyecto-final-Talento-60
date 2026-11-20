@@ -1,4 +1,5 @@
 // Vista de inicio: hero, métricas y propuesta para empresas.
+import fotoHero from '../../Imagenes/talento60at.jpg';
 import Contador from "./Contador.jsx";
 
 const METRICAS = [
@@ -90,7 +91,7 @@ export default function Inicio({ onNavegar }) {
         <div className="hero-video">
           <div className="video-card">
             <img
-              src="talento60at.jpg"
+              src={fotoHero}
               alt="Vista previa del videocurrículum de Sofía Serna"
             />
             <span className="badge badge-tiempo">0:60</span>
