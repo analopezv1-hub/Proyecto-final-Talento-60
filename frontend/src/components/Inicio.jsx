@@ -100,19 +100,7 @@ export default function Inicio({ onNavegar }) {
             >
               <i className="fa-solid fa-play" aria-hidden="true" />
             </button>
-            <div className="video-info">
-              <strong>
-                
-                <span className="verificado">
-                  <i className="fa-solid fa-circle-check" aria-hidden="true" />{" "}
-                  Verificada
-                </span>
-              </strong>
-              <span className="rol">Tania y Ana</span>
-              <span className="badge badge-match">Match 98%</span>
-            </div>
-          </div>
-          <div className="chip-ia">
+            
             <i className="fa-solid fa-wand-magic-sparkles" aria-hidden="true" />
             
           </div>
